@@ -11,7 +11,8 @@ const express = require("express");
 const app = express();
 const port = process.env.port || 2011;
 const express_handlerbars = require('express-handlebars');
-const { use } = require("passport");
+// const { use } = require("passport");
+const {createStarList} = require("./controllers/handlebarsHelper")
 
 // config public static web folder
 app.use(express.static(__dirname + PUBLIC_STATIC_WEB_FOLDER))
@@ -24,6 +25,9 @@ app.engine('hbs', express_handlerbars.engine({
   defaultLayout: DEFAULT_LAYOUT,
   runtimeOptions: {
     allowProtoPropertiesByDefault: true
+  },
+  helpers:{
+    createStarList
   }
 }))
 
@@ -31,7 +35,7 @@ app.set('view engine', EXT_NAME)
 
 // routes
 app.use('/', require('./routes/indexRouter'))
-
+app.use('/products', require('./routes/productsRouter'))
 app.use((req, res, next)=>{
   res.status(404).render('error', {message: 'File not Found!'})
 })
