@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
     imagePath: DataTypes.STRING,
     oldPrice: DataTypes.DECIMAL,
     price: DataTypes.DECIMAL,
-    summary: DataTypes.TEXT,
+    summary: DataTypes.TEXT,  
     description: DataTypes.TEXT,
     specification: DataTypes.TEXT,
     stars: DataTypes.FLOAT,

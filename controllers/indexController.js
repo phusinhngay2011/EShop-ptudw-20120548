@@ -19,6 +19,7 @@ const controller = {
       order: [["stars", "DESC"]],
       limit: 10
     });
+    
     res.locals.featureProducts = featureProducts
 
     // Category

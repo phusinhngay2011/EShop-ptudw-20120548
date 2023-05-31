@@ -1,10 +1,10 @@
 <div class="product-item">
   <div class="product-image">
     <a href="/products/{{id}}">
-      <img src="{{imagePath}}" alt="{{name}}" />
+      <img src="/{{imagePath}}" alt="{{name}}" />
     </a>
     <div class="product-action">
-      <a href="#"><i class="fa fa-cart-plus"></i></a>
+      <a style = "cursor: pointer" onclick = "addCart({{id}}, 1)"><i class="fa fa-cart-plus"></i></a>
       <a href="#"><i class="fa fa-heart"></i></a>
       <a href="#"><i class="fa fa-search"></i></a>
     </div>

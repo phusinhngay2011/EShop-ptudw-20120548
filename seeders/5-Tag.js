@@ -4,16 +4,47 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     const items = [
-      { name: 'Vivamus' },
-      { name: 'Phasellus' },
-      { name: 'pulvinar' },
-      { name: 'Curabitur' },
-      { name: 'Fusce' },
-      { name: 'Sem quis' },
-      { name: 'Mollis metus' },
-      { name: 'Sit amet' },
-      { name: 'Vel posuere' },
-      { name: 'orci luctus' }
+      {
+        "name": "Dark-winged trumpeter"
+      }, {
+        "name": "Eagle, long-crested hawk"
+      }, {
+        "name": "Cuis"
+      }, {
+        "name": "Black-throated butcher bird"
+      }, {
+        "name": "American badger"
+      }, {
+        "name": "Grenadier, common"
+      }, {
+        "name": "Alligator, american"
+      }, {
+        "name": "African polecat"
+      }, {
+        "name": "Gila monster"
+      }, {
+        "name": "Warthog"
+      }, {
+        "name": "Striped hyena"
+      }, {
+        "name": "Heron, boat-billed"
+      }, {
+        "name": "Creeper, black-tailed tree"
+      }, {
+        "name": "Anteater, giant"
+      }, {
+        "name": "Indian mynah"
+      }, {
+        "name": "Dove, rock"
+      }, {
+        "name": "White-browed owl"
+      }, {
+        "name": "Marshbird, brown and yellow"
+      }, {
+        "name": "Common boubou shrike"
+      }, {
+        "name": "Royal tern"
+      }
     ];
     items.forEach(item => {
       item.createdAt = Sequelize.literal('NOW()');

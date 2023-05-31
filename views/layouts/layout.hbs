@@ -50,9 +50,11 @@
                                     <a href="/#" class="dropdown-item">Register</a>
                                 </div>
                             </div>
-                            <div class="cart">
+                            <div class="cart" style = "cursor: pointer;">
+                                <a href = "/products/cart">
                                 <i class="fa fa-cart-plus"></i>
-                                <span>(0)</span>
+                                <span id = "cart-quantity">({{quantity}})</span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -80,7 +82,7 @@
                                 <div class="dropdown-menu">
                                     <a href="/products" class="dropdown-item">Product</a>
                                     <a href="/product-detail" class="dropdown-item">Product Detail</a>
-                                    <a href="/cart" class="dropdown-item">Cart</a>
+                                    <a href="/products/cart" class="dropdown-item">Cart</a>
                                     <a href="/wishlist" class="dropdown-item">Wishlist</a>
                                     <a href="/checkout" class="dropdown-item">Checkout</a>
                                     <a href="/login" class="dropdown-item">Login & Register</a>
@@ -117,7 +119,7 @@
                             <ul>
                                 <li><a href="/products">Product</a></li>
                                 <li><a href="/product-detail">Product Detail</a></li>
-                                <li><a href="/cart">Cart</a></li>
+                                <li><a href="/products/cart">Cart</a></li>
                                 <li><a href="/checkout">Checkout</a></li>
                                 <li><a href="/login">Login & Register</a></li>
                                 <li><a href="/my-account">My Account</a></li>
@@ -130,7 +132,7 @@
                             <h3 class="title">Quick Links</h3>
                             <ul>
                                 <li><a href="/products">Product</a></li>
-                                <li><a href="/cart">Cart</a></li>
+                                <li><a href="/products/cart">Cart</a></li>
                                 <li><a href="/checkout">Checkout</a></li>
                                 <li><a href="/login">Login & Register</a></li>
                                 <li><a href="/my-account">My Account</a></li>
@@ -162,15 +164,15 @@
                     <div class="col-md-6">
                         <div class="payment-method">
                             <p>We Accept:</p>
-                            <img src="img/payment-method.png" alt="Payment Method" />
+                            <img src="/img/payment-method.png" alt="Payment Method" />
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="payment-security">
                             <p>Secured By:</p>
-                            <img src="img/godaddy.svg" alt="Payment Security" />
-                            <img src="img/norton.svg" alt="Payment Security" />
-                            <img src="img/ssl.svg" alt="Payment Security" />
+                            <img src="/img/godaddy.svg" alt="Payment Security" />
+                            <img src="/img/norton.svg" alt="Payment Security" />
+                            <img src="/img/ssl.svg" alt="Payment Security" />
                         </div>
                     </div>
                 </div>
@@ -209,5 +211,6 @@
         
         <!-- Template Javascript -->
         <script src="/js/main.js"></script>
+        <script src="/js/20120548.js"></script>
     </body>
 </html>
