@@ -10,7 +10,7 @@ controller.update = async (req, res) => {
 
   if (quantity > 0) {
     let updatedItem = req.session.cart.update(id, quantity)
-    console.log(updatedItem)
+    // console.log(updatedItem)
     return res.json({
       item: updatedItem,
       quantity: req.session.cart.quantity,

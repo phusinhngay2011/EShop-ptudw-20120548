@@ -14,6 +14,16 @@ module.exports = (sequelize, DataTypes) => {
             Address.belongsTo(models.User, { foreignKey: 'userId' });
         }
     }
+    // "firstName": "Åsa",
+    // "lastName": "Howsan",
+    // "email": "chowsan2k@bbb.org",
+    // "mobile": "757-918-7902",
+    // "address": "52385 Superior Crossing",
+    // "country": "United States",
+    // "city": "Virginia Beach",
+    // "state": "Virginia",
+    // "zipCode": "PE-SAM",
+    // "isDefault": true
     Address.init({
         firstName: DataTypes.STRING,
         lastName: DataTypes.STRING,

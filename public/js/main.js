@@ -177,7 +177,7 @@
     
     
     // Shipping address show hide
-    $('.checkout #shipto').change(function () {
+    $('.checkout #address0').change(function () {
         if($(this).is(':checked')) {
             $('.checkout .shipping-address').slideDown();
         } else {

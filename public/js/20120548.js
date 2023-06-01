@@ -86,7 +86,7 @@ async function clearCart() {
     if (
       confirm("This action will remove all the items in your cart, are you sure?")
     ) {
-      let res = await fetch("/products/cart", {
+      let res = await fetch("/products/cart/all", {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -95,7 +95,6 @@ async function clearCart() {
       });
       // alert(res.status)
       if (res.status == 200) {
-        let json = await res.json();
         //   alert(json.quantity)
         //   alert(json.subtotal)
         //   alert(json.total)
@@ -110,4 +109,14 @@ async function clearCart() {
         }
       
     }
-  }
+}
+
+function placeorders(e){
+  
+  e.preventDefault()
+  const addressId = document.querySelector('input[name=addressId]:checked')
+  if(!addressId || addressId.value == 0)
+    if(!e.target.checkValidity())
+      return e.target.reportValidity()
+  e.target.submit()
+}
