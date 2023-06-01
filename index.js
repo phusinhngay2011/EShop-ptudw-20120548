@@ -1,4 +1,6 @@
 "use strict"
+require('dotenv').config()
+
 const PUBLIC_STATIC_WEB_FOLDER = '/public'
 const VIEWS = '/views'
 const LAYOUTS = VIEWS + '/layouts'
@@ -9,7 +11,7 @@ const DEFAULT_LAYOUT = 'layout'
 // app
 const express = require("express")
 const app = express()
-const port = process.env.port || 2011
+const port = process.env.PORT || 2011
 const express_handlerbars = require('express-handlebars')
 // const { use } = require("passport")
 const {createStarList} = require("./controllers/handlebarsHelper")
@@ -19,7 +21,8 @@ const session  = require('express-session')
 const redisStore = require('connect-redis').default
 const {createClient} = require('redis')
 const redisClient = createClient({
-  url: 'redis://red-chs7lhe4dadfn615li50:6379' // internal
+  url: process.env.REDIS_URL // external
+  // url: 'redis://red-chs7lhe4dadfn615li50:6379' // internal
 })
 redisClient.connect().catch(console.error)
 
@@ -51,7 +54,7 @@ app.use(express.urlencoded({extended: false}))
 
 // cau hinh su dung session
 app.use(session({
-  secret: 'S3cret',
+  secret: process.env.SESSION_SECRET,
   store: new redisStore({client: redisClient}),
   resave: false,
   saveUninitialized: false,
