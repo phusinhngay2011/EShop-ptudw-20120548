@@ -120,3 +120,15 @@ function placeorders(e){
       return e.target.reportValidity()
   e.target.submit()
 }
+
+function checkPasswordConfirm(formId){
+  let password = document.querySelector(`#${formId} [name=password]`)
+  let cfPassword = document.querySelector(`#${formId} [name=confirmPassword]`)
+  if(password.value != cfPassword.value){
+    cfPassword.setCustomValidity('Passwords dont match!')
+    cfPassword.reportValidity()
+  }
+  else{
+    cfPassword.setCustomValidity('')
+  }
+}

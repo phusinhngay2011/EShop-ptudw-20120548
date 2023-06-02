@@ -44,12 +44,20 @@
                     <div class="col-md-3">
                         <div class="user">
                             <div class="dropdown">
-                                <a href="/#" class="dropdown-toggle" data-toggle="dropdown">My Account</a>
+                                {{#if isLoggedIn}}
+                                <a href="/#" class="dropdown-toggle" data-toggle="dropdown">My Account</a>          
                                 <div class="dropdown-menu">
-                                    <a href="/#" class="dropdown-item">Login</a>
-                                    <a href="/#" class="dropdown-item">Register</a>
+                                    <a href="/users/my-account" class="dropdown-item">Profile</a>
+                                    <a href="/users/wishlist" class="dropdown-item">Wishlist</a>
+                                    <a href="/users/logout" class="dropdown-item">Logout</a>
                                 </div>
+                                {{else}}
+                                <div class="dropdown">
+                                    <a href="/users/login" >Login or Register</a>
+                                </div>
+                                {{/if}}
                             </div>
+
                             <div class="cart" style = "cursor: pointer;">
                                 <a href = "/products/cart">
                                 <i class="fa fa-cart-plus"></i>
@@ -85,7 +93,7 @@
                                     <a href="/products/cart" class="dropdown-item">Cart</a>
                                     <a href="/wishlist" class="dropdown-item">Wishlist</a>
                                     <a href="/checkout" class="dropdown-item">Checkout</a>
-                                    <a href="/login" class="dropdown-item">Login & Register</a>
+                                    <a href="/users/login" class="dropdown-item">Login & Register</a>
                                     <a href="/my-account" class="dropdown-item">My Account</a>
                                 </div>
                             </div>
@@ -121,7 +129,7 @@
                                 <li><a href="/product-detail">Product Detail</a></li>
                                 <li><a href="/products/cart">Cart</a></li>
                                 <li><a href="/checkout">Checkout</a></li>
-                                <li><a href="/login">Login & Register</a></li>
+                                <li><a href="/users/login">Login & Register</a></li>
                                 <li><a href="/my-account">My Account</a></li>
                             </ul>
                         </div>
@@ -134,7 +142,7 @@
                                 <li><a href="/products">Product</a></li>
                                 <li><a href="/products/cart">Cart</a></li>
                                 <li><a href="/checkout">Checkout</a></li>
-                                <li><a href="/login">Login & Register</a></li>
+                                <li><a href="/users/login">Login & Register</a></li>
                                 <li><a href="/my-account">My Account</a></li>
                                 <li><a href="/wishlist">Wishlist</a></li>
                             </ul>
